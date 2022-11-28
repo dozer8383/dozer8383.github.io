@@ -31,6 +31,25 @@ class Utilities {
                             "defaultValue": 10
                         }
                     }
+                },
+                {
+                    "opcode": 'slice',
+                    "blockType": "reporter",
+                    "text": "characters [BEGINNING] to [END] in text [TEXT]",
+                    "arguments": {
+                        "BEGINNING": {
+                            "type": "number",
+                            "defaultValue": 1
+                        },
+                        "END": {
+                            "type": "number",
+                            "defaultValue": 5
+                        },
+                        "TEXT": {
+                            "type": "string",
+                            "defaultValue": "hello there"
+                        }
+                    }
                 }
             ],
             // "menus": {
@@ -59,6 +78,10 @@ class Utilities {
             output += `${Math.round(Math.random() * 9)}`
         }
         return output
+    };
+
+    slice({BEGINNING, END, TEXT}){
+        return TEXT.slice(BEGINNING + 1, END + 1)
     };
 };
 
