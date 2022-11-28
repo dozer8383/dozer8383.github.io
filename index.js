@@ -20,6 +20,17 @@ class Utilities {
                             "defaultValue": "10 20"
                         }
                     }
+                },
+                {
+                    "opcode": 'randomdigits',
+                    "blockType": "reporter",
+                    "text": "generate [INPUT] random digits",
+                    "arguments": {
+                        "INPUT": {
+                            "type": "number",
+                            "defaultValue": 10
+                        }
+                    }
                 }
             ],
             // "menus": {
@@ -39,6 +50,14 @@ class Utilities {
             output += parseInt(input)
         })
         output = output / inputs.length
+        return output
+    };
+
+    randomdigits({INPUT}){
+        var output = ""
+        for (let i = 0; i < INPUT; i++) {
+            output += `${Math.round(Math.random() * 9)}`
+        }
         return output
     };
 };
