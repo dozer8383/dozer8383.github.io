@@ -11,30 +11,29 @@ class Utilities {
             "color2": '#ec8c6c',
             "blocks": [
                 {
-                    "opcode": 'block',
+                    "opcode": 'average',
                     "blockType": "reporter",
-                    "text": "Block [INPUT]",
+                    "text": "average of [INPUT]",
                     "arguments": {
                         "INPUT": {
                             "type": "string",
-                            "menu": "menu",
-                            "defaultValue": "Hi"
+                            "defaultValue": ""
                         }
                     }
                 }
             ],
-            "menus": {
-                "menu": {
-                    "items": ["Hi", "Bye"]
-                },
-            },
+            // "menus": {
+            //     "menu": {
+            //         "items": ["Hi", "Bye"]
+            //     },
+            // },
         };
     };
     
     // Code for blocks go here
 
-    block({INPUT}){
-        return INPUT
+    average({INPUT}){
+        return JSON.stringify(INPUT)
     };
 };
 
