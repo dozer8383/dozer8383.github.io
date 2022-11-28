@@ -7,6 +7,8 @@ class Utilities {
         return {
             "id": 'utilities',
             "name": 'Utilities',
+            "color1": '#ff9977',
+            "color2": '#ec8c6c',
             "blocks": [
                 {
                     "opcode": 'block',
