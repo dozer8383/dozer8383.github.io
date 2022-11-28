@@ -11,7 +11,7 @@ class Utilities {
                 {
                     "opcode": 'block',
                     "blockType": "reporter",
-                    "text": "Block",
+                    "text": "Block [INPUT]",
                     "arguments": {
                         "INPUT": {
                             "type": "string",
