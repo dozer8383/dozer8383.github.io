@@ -81,7 +81,7 @@ class Utilities {
     };
 
     slice({BEGINNING, END, TEXT}){
-        return TEXT.slice(BEGINNING - 1, END - 1)
+        return TEXT.slice(BEGINNING - 1, END)
     };
 };
 
