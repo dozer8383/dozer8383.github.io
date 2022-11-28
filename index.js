@@ -17,6 +17,7 @@ class Utilities {
                     "arguments": {
                         "INPUT": {
                             "type": "string",
+                            "defaultValue": "10 20"
                         }
                     }
                 }
