@@ -33,7 +33,13 @@ class Utilities {
     // Code for blocks go here
 
     average({INPUT}){
-        return JSON.stringify(INPUT)
+        var inputs = INPUT.split(" ")
+        var output = 0
+        inputs.forEach(input => {
+            output += parseInt(input)
+        })
+        output = output / inputs.length
+        return output
     };
 };
 
