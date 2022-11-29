@@ -89,7 +89,7 @@ class Utilities {
     
     gettimezone(){
         var date = new Date()
-        var offset = date.getTimeZoneOffset()
+        var offset = date.getTimezoneOffset()
         return offset   
     }
 
