@@ -33,6 +33,17 @@ class Utilities {
                     }
                 },
                 {
+                    "opcode": 'gettimezone',
+                    "blockType": "reporter",
+                    "text": "get timezone offset",
+                    "arguments": {
+                        "TIMEZONEINPUT": {
+                            "type": "string",
+                            "menu": "timezones"
+                        }
+                    }
+                },
+                {
                     "opcode": 'slice',
                     "blockType": "reporter",
                     "text": "characters [BEGINNING] to [END] in text [TEXT]",
@@ -52,11 +63,11 @@ class Utilities {
                     }
                 }
             ],
-            // "menus": {
-            //     "menu": {
-            //         "items": ["Hi", "Bye"]
-            //     },
-            // },
+//             "menus": {
+//                 "timezones": {
+//                     "items": []
+//                 },
+//             },
         };
     };
     
@@ -79,6 +90,10 @@ class Utilities {
         }
         return output
     };
+    
+    gettimezone({}){
+        return date.getTimezoneOffset()   
+    }
 
     slice({BEGINNING, END, TEXT}){
         return TEXT.slice(BEGINNING - 1, END)
