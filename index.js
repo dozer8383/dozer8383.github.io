@@ -35,7 +35,7 @@ class Utilities {
                 {
                     "opcode": 'gettimezone',
                     "blockType": "reporter",
-                    "text": "get timezone offset",
+                    "text": "get current timezone offset",
                     "arguments": {
                     }
                 },
