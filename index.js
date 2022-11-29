@@ -37,10 +37,6 @@ class Utilities {
                     "blockType": "reporter",
                     "text": "get timezone offset",
                     "arguments": {
-                        "TIMEZONEINPUT": {
-                            "type": "string",
-                            "menu": "timezones"
-                        }
                     }
                 },
                 {
@@ -91,7 +87,7 @@ class Utilities {
         return output
     };
     
-    gettimezone({}){
+    gettimezone(){
         return date.getTimezoneOffset()   
     }
 
