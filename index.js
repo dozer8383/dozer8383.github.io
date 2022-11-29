@@ -88,7 +88,9 @@ class Utilities {
     };
     
     gettimezone(){
-        return date.getTimezoneOffset()   
+        var date = new Date()
+        var offset = date.getTimeZoneOffset()
+        return offset   
     }
 
     slice({BEGINNING, END, TEXT}){
