@@ -94,6 +94,7 @@ class Utilities {
     }
 
     slice({BEGINNING, END, TEXT}){
+        var texttoslice = TEXT.toString()
         return TEXT.slice(BEGINNING - 1, END)
     };
 };
