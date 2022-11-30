@@ -118,54 +118,17 @@ class JavaScript {
         return {
             "id": 'javascript',
             "name": 'JavaScript',
-            "color1": '#ffff00',
-            "color2": '#ecec00',
+            "color1": '#eeee00',
+            "color2": '#dddd00',
             "blocks": [
                 {
-                    "opcode": 'average',
-                    "blockType": "reporter",
-                    "text": "average of [INPUT]",
+                    "opcode": 'customjs',
+                    "blockType": "command",
+                    "text": "run [JAVASCRIPT]",
                     "arguments": {
-                        "INPUT": {
+                        "JAVASCRIPT": {
                             "type": "string",
-                            "defaultValue": "10 20"
-                        }
-                    }
-                },
-                {
-                    "opcode": 'randomdigits',
-                    "blockType": "reporter",
-                    "text": "generate [INPUT] random digits",
-                    "arguments": {
-                        "INPUT": {
-                            "type": "number",
-                            "defaultValue": 10
-                        }
-                    }
-                },
-                {
-                    "opcode": 'gettimezone',
-                    "blockType": "reporter",
-                    "text": "get current timezone offset",
-                    "arguments": {
-                    }
-                },
-                {
-                    "opcode": 'slice',
-                    "blockType": "reporter",
-                    "text": "characters [BEGINNING] to [END] in text [TEXT]",
-                    "arguments": {
-                        "BEGINNING": {
-                            "type": "number",
-                            "defaultValue": 1
-                        },
-                        "END": {
-                            "type": "number",
-                            "defaultValue": 5
-                        },
-                        "TEXT": {
-                            "type": "string",
-                            "defaultValue": "hello there"
+                            "defaultValue": 'console.log("Hello World!")'
                         }
                     }
                 }
@@ -180,33 +143,9 @@ class JavaScript {
     
     // Code for blocks go here
 
-    average({INPUT}){
-        var inputs = INPUT.split(" ")
-        var output = 0
-        inputs.forEach(input => {
-            output += parseInt(input)
-        })
-        output = output / inputs.length
-        return output
-    };
-
-    randomdigits({INPUT}){
-        var output = ""
-        for (let i = 0; i < INPUT; i++) {
-            output += `${Math.round(Math.random() * 9)}`
-        }
-        return output
-    };
-    
-    gettimezone(){
-        var date = new Date()
-        var offset = date.getTimezoneOffset()
-        return offset   
-    }
-
-    slice({BEGINNING, END, TEXT}){
-        var texttoslice = TEXT.toString()
-        return texttoslice.slice(BEGINNING - 1, END)
+    customjs({JAVASCRIPT}){
+        eval(JAVASCRIPT)
+        return true
     };
 };
 
